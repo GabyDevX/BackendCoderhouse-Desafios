@@ -43,8 +43,7 @@ class Container {
       if (info !== '') {
         info = JSON.parse(info)
         const item = info.find((el) => el.id === id) || null
-        return item 
-        // !== null ? item : 'The object does not exist'
+        return item
       } else {
         return 'The file is empty'
       }
@@ -103,60 +102,36 @@ class Container {
   }
 }
 
-// Create a new container
 const products = new Container('products')
 
-// Create test data
-const iphoneX = {
-  title: 'Iphone X',
-  price: 700,
-  thumbnail: 'https://cdn-icons-png.flaticon.com/512/1088/1088537.png',
-}
-const iphone11 = {
-  title: 'Iphone 11',
-  price: 800,
-  thumbnail: 'https://cdn-icons-png.flaticon.com/512/1088/1088537.png',
-}
-const iphone12 = {
-  title: 'Iphone 12',
-  price: 900,
-  thumbnail: 'https://cdn-icons-png.flaticon.com/512/1088/1088537.png',
-}
-const iphone13 = {
-  title: 'Iphone 13',
-  price: 1000,
-  thumbnail: 'https://cdn-icons-png.flaticon.com/512/1088/1088537.png',
-}
+const express = require('express')
 
-// We have created this function to test all the Container class methods,
-// it is an async await function because the methods return promises and we need
-// to wait until the promises are resolved to check the results
-const prueba = async () => {
-  const iphoneXID = await products.save(iphoneX)
-  console.log(iphoneXID)
-  const iphone11ID = await products.save(iphone11)
-  console.log(iphone11ID)
-  const iphone12ID = await products.save(iphone12)
-  console.log(iphone12ID)
-  const iphone13ID = await products.save(iphone13)
-  console.log(iphone13ID)
+const app = express()
 
-  const product2 = await products.getById(2)
-  console.log(product2)
+app.get('/', (req, res) => {
+  res.send(
+    'Please go to /productos to get a list of products or /productoRandom to get a random product',
+  )
+})
 
-  const product10 = await products.getById(10)
-  console.log(product10)
+app.get('/productos', async (req, res) => {
+  const data = await products.getAll()
+  res.send(`${JSON.stringify(data)}`)
+})
 
-  const allProducts = await products.getAll()
-  console.log(allProducts)
+app.get('/productoRandom', async (req, res) => {
+  const data = await products.getAll()
+  const randomId = parseInt(Math.floor(Math.random() * data.length + 1))
+  const product = await products.getById(randomId)
+  res.send(`${JSON.stringify(product)}`)
+})
 
-  await products.deleteById(4)
-  await products.deleteById(12)
+const PORT = 8080
 
-  await products.deleteAll()
+const server = app.listen(PORT, () => {
+  console.log('Servidor iniciado')
+})
 
-  const allProductsEmpty = await products.getAll()
-  console.log(allProductsEmpty)
-}
-
-prueba()
+server.on('error', (err) => {
+  console.log('hubo un error: ' + err)
+})

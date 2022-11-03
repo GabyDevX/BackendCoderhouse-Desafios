@@ -128,35 +128,37 @@ const iphone13 = {
   thumbnail: 'https://cdn-icons-png.flaticon.com/512/1088/1088537.png',
 }
 
-// We have created this function to test all the Container class methods,
-// it is an async await function because the methods return promises and we need
-// to wait until the promises are resolved to check the results
-const prueba = async () => {
-  const iphoneXID = await products.save(iphoneX)
-  console.log(iphoneXID)
-  const iphone11ID = await products.save(iphone11)
-  console.log(iphone11ID)
-  const iphone12ID = await products.save(iphone12)
-  console.log(iphone12ID)
-  const iphone13ID = await products.save(iphone13)
-  console.log(iphone13ID)
+// // We have created this function to test all the Container class methods,
+// // it is an async await function because the methods return promises and we need
+// // to wait until the promises are resolved to check the results
+// const prueba = async () => {
+//   const iphoneXID = await products.save(iphoneX)
+//   console.log(iphoneXID)
+//   const iphone11ID = await products.save(iphone11)
+//   console.log(iphone11ID)
+//   const iphone12ID = await products.save(iphone12)
+//   console.log(iphone12ID)
+//   const iphone13ID = await products.save(iphone13)
+//   console.log(iphone13ID)
 
-  const product2 = await products.getById(2)
-  console.log(product2)
+//   const product2 = await products.getById(2)
+//   console.log(product2)
 
-  const product10 = await products.getById(10)
-  console.log(product10)
+//   const product10 = await products.getById(10)
+//   console.log(product10)
 
-  const allProducts = await products.getAll()
-  console.log(allProducts)
+//   const allProducts = await products.getAll()
+//   console.log(allProducts)
 
-  await products.deleteById(4)
-  await products.deleteById(12)
+//   await products.deleteById(4)
+//   await products.deleteById(12)
 
-  await products.deleteAll()
+//   await products.deleteAll()
 
-  const allProductsEmpty = await products.getAll()
-  console.log(allProductsEmpty)
-}
+//   const allProductsEmpty = await products.getAll()
+//   console.log(allProductsEmpty)
+// }
 
-prueba()
+// prueba()
+
+export {}
