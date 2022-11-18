@@ -1,0 +1,1 @@
+Despues de haber peleado e implementado cada uno de los motores de plantilla, he decidido que voy a seguir trabajando con ejs ya que es uno de los mas populares y faciles de implementar, la estructura es mas limpia y no necesita mucha configuración, además de que fue el que menos trabajo me dió a la hora de aplicarlo.

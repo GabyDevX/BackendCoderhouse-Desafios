@@ -1,0 +1,23 @@
+block formulario
+
+h1(style="color:blue;")='Ingrese datos'
+br
+
+form(action="/api/productos" method="post")
+
+    .form-group
+        label(for="titulo")
+            b='Titulo'
+        input(id="titulo" class="form-control" type="text" name="titulo")
+
+    .form-group
+        label(for="precio")
+            b='Precio'
+        input(id="precio" class="form-control" type="number" name="precio")
+
+    .form-group
+        label(for="imagen")
+            b='Imagen'
+        input(id="imagen" class="form-control" type="text" name="imagen")
+
+    button.btn.btn-success.mt-3.mb-5='Enviar'

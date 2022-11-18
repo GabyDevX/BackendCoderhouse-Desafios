@@ -1,0 +1,19 @@
+block historial
+
+h2(style="color:crimson;")='Historial'
+
+    if productos.length > 0 
+        .table-responsive(style = "font-size: 16px")
+            table.table.table-dark
+                tr(style="color: yellow;") 
+                    th='Nombre'
+                    th='Apellido' 
+                    th='Edad'
+                each val in productos
+                    tr
+                        td= val.titulo
+                        td= val.precio
+                        td
+                            img(src=val.imagen style="width: 2rem; height: 'auto'")
+    else
+        h3.alert.alert-danger= 'no se encontraron datos'
