@@ -1,0 +1,79 @@
+[
+  {
+    "socketid": "4FTj573dc_RNnsCSAAAD",
+    "titulo": "Regla",
+    "precio": "13",
+    "imagen": "https://cdn3.iconfinder.com/data/icons/education-209/64/tube-lab-science-school-1024.png",
+    "id": 1
+  },
+  {
+    "socketid": "Prcn_D2gq3d9kxG7AAAD",
+    "titulo": "1",
+    "precio": "1",
+    "imagen": "https://cdn3.iconfinder.com/data/icons/education-209/64/tube-lab-science-school-1024.png",
+    "id": 2
+  },
+  {
+    "socketid": "yt_GR4BSgiS2PD-HAAAD",
+    "titulo": "1",
+    "precio": "1",
+    "imagen": "https://cdn3.iconfinder.com/data/icons/education-209/64/tube-lab-science-school-1024.png",
+    "id": 3
+  },
+  {
+    "socketid": "_eE_l-42W584VuwbAAAD",
+    "titulo": "asd",
+    "precio": "1",
+    "imagen": "https://cdn3.iconfinder.com/data/icons/education-209/64/tube-lab-science-school-1024.png",
+    "id": 4
+  },
+  {
+    "socketid": "_eE_l-42W584VuwbAAAD",
+    "titulo": "asd",
+    "precio": "1",
+    "imagen": "https://cdn3.iconfinder.com/data/icons/education-209/64/tube-lab-science-school-1024.png",
+    "id": 5
+  },
+  {
+    "socketid": "_eE_l-42W584VuwbAAAD",
+    "titulo": "asd",
+    "precio": "1",
+    "imagen": "https://cdn3.iconfinder.com/data/icons/education-209/64/tube-lab-science-school-1024.png",
+    "id": 6
+  },
+  {
+    "socketid": "_eE_l-42W584VuwbAAAD",
+    "titulo": "asd",
+    "precio": "1",
+    "imagen": "https://cdn3.iconfinder.com/data/icons/education-209/64/tube-lab-science-school-1024.png",
+    "id": 7
+  },
+  {
+    "socketid": "_eE_l-42W584VuwbAAAD",
+    "titulo": "asd",
+    "precio": "1",
+    "imagen": "https://cdn3.iconfinder.com/data/icons/education-209/64/tube-lab-science-school-1024.png",
+    "id": 8
+  },
+  {
+    "socketid": "_eE_l-42W584VuwbAAAD",
+    "titulo": "asd",
+    "precio": "1",
+    "imagen": "https://cdn3.iconfinder.com/data/icons/education-209/64/tube-lab-science-school-1024.png",
+    "id": 9
+  },
+  {
+    "socketid": "hmsR7QOUCcZMPYV_AAAD",
+    "titulo": "asd",
+    "precio": "1",
+    "imagen": "https://cdn3.iconfinder.com/data/icons/education-209/64/tube-lab-science-school-1024.png",
+    "id": 10
+  },
+  {
+    "socketid": "hmsR7QOUCcZMPYV_AAAD",
+    "titulo": "asdasd",
+    "precio": "1",
+    "imagen": "https://cdn3.iconfinder.com/data/icons/education-209/64/tube-lab-science-school-1024.png",
+    "id": 11
+  }
+]
