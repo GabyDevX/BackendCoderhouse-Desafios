@@ -109,8 +109,10 @@ class Container {
 }
 
 const mensajesArchivo = new Container('mensajesArchivo')
+mensajesArchivo.getAll()
 
 const productosArchivo = new Container('productosArchivo')
+productosArchivo.getAll()
 
 //SERVER
 

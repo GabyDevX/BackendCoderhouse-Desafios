@@ -18,6 +18,9 @@ document.querySelector('#enviarMensaje').addEventListener('click', (e) => {
   } else {
     alert('Email invalido')
   }
+
+  email.value = ''
+  mensaje.value = ''
 })
 
 socket.on('mensajes', (data) => {
@@ -36,6 +39,7 @@ socket.on('mensajes', (data) => {
 const titulo = document.querySelector('#titulo')
 const precio = document.querySelector('#precio')
 const imagen = document.querySelector('#imagen')
+const table = document.querySelector('#table')
 
 document.querySelector('#enviarProducto').addEventListener('click', (e) => {
   e.preventDefault()
@@ -44,13 +48,34 @@ document.querySelector('#enviarProducto').addEventListener('click', (e) => {
     precio: precio.value,
     imagen: imagen.value,
   })
+
+  titulo.value = ''
+  precio.value = ''
+  imagen.value = ''
 })
 
 socket.on('productos', (data) => {
-  //   const productosHTML = data
-  //     .map(
-  //       (msj) =>
-  //         `<strong style="color:blue">${msj.email}</strong> [<span style="color:red">${msj.fyh}</span>]: <span style="color:green">${msj.mensaje}</span>`,
-  //     )
-  //     .join('<br>')
+  if (data.length !== 0) {
+    console.log('hola')
+    table.className = 'table-responsive'
+    const tablaHTML = document.createElement('table')
+    tablaHTML.className = 'table table-dark'
+    const rows = `<tr style="color: yellow;"> <th>Titulo</th> <th>Precio</th> <th>Imagen</th> </tr>`
+    tablaHTML.innerHTML = rows
+    data.forEach((p) => {
+      tablaHTML.appendChild(productTemplate(p.titulo, p.precio, p.imagen))
+    })
+    table.innerHTML = ''
+    table.append(tablaHTML)
+    console.log(table)
+    console.log(tablaHTML)
+  }
 })
+
+const productTemplate = (titulo, precio, imagen) => {
+  let elemento = document.createElement('tr')
+  elemento.innerHTML = `<td>${titulo}</td>
+                         <td>${precio}</td>
+                         <td><img style="width: 2rem; height: 'auto'" src="${imagen}"></td>`
+  return elemento
+}
