@@ -1,0 +1,147 @@
+1. 
+use ecommerce
+
+2.
+db.productos.insertMany([
+    {
+    titulo: "Titulo 1",
+    precio: 110,
+    imagen: "url.com",
+},
+    {
+    titulo: "Titulo 2",
+    precio: 230,
+    imagen: "url.com",
+},
+    {
+    titulo: "Titulo 3",
+    precio: 330,
+    imagen: "url.com",
+},
+    {
+    titulo: "Titulo 4",
+    precio: 404,
+    imagen: "url.com",
+},
+    {
+    titulo: "Titulo 5",
+    precio: 555,
+    imagen: "url.com",
+},
+    {
+    titulo: "Titulo 6",
+    precio: 1006,
+    imagen: "url.com",
+},
+    {
+    titulo: "Titulo 7",
+    precio: 3070,
+    imagen: "url.com",
+},
+    {
+    titulo: "Titulo 8",
+    precio: 2800,
+    imagen: "url.com",
+},
+    {
+    titulo: "Titulo 9",
+    precio: 4090,
+    imagen: "url.com",
+},
+    {
+    titulo: "Titulo 10",
+    precio: 3200,
+    imagen: "url.com",
+},
+])
+
+db.mensajes.insertMany([{
+    email: "1@gmail.com",
+    mensaje: "Hola soy 1",
+},
+{
+    email: "2@gmail.com",
+    mensaje: "Hola soy 2",
+},
+{
+    email: "3@gmail.com",
+    mensaje: "Hola soy 3",
+},
+{
+    email: "4@gmail.com",
+    mensaje: "Hola soy 4",
+},
+{
+    email: "5@gmail.com",
+    mensaje: "Hola soy 5",
+},
+{
+    email: "6@gmail.com",
+    mensaje: "Hola soy 6",
+},
+{
+    email: "7@gmail.com",
+    mensaje: "Hola soy 7",
+},
+{
+    email: "8@gmail.com",
+    mensaje: "Hola soy 8",
+},
+{
+    email: "9@gmail.com",
+    mensaje: "Hola soy 9",
+},
+{
+    email: "10@gmail.com",
+    mensaje: "Hola soy 10",
+}])
+
+3.
+db.productos.find()
+db.mensjaes.find()
+
+4.
+db.productos.estimatedDocumentCount()
+db.mensjaes.estimatedDocumentCount()
+
+5.
+    a.
+    db.productos.insertOne({
+    titulo: "Titulo 11",
+    precio: 1110,
+    imagen: "url.com",
+    })
+
+    b.
+        i.
+        db.productos.find({"precio": {$lt: 1000}})
+
+        ii.
+        db.productos.find({$and: [{"precio": {$gt: 1000}} , {"precio": {$lt: 3000}}]})
+
+        iii.
+        db.productos.find({"precio": {$gt: 1000}})
+
+        iv.
+        db.productos.find({}, {"titulo": 1, "_id": 0}).sort({"precio": 1}).skip(2).limit(1)
+
+    c.
+    db.productos.updateMany({}, {$set: {"stock": 100}})
+
+    d.
+    db.productos.updateMany({"precio": {$gt: 4000}}, {$set: {"stock": 0}})
+
+    e.
+    db.productos.deleteMany({"precio": {$lt: 1000}})
+
+6.
+use admin
+db.createUser({user: "pepe", pwd: "asd456", roles: [{role: "read", db: "ecommerce"}]})
+mongosh -u pepe -p asd456
+use ecommerce
+db.productos.find()
+db.productos.insertOne({
+    titulo: "Titulo 12",
+    precio: 1112,
+    imagen: "url.com",
+    })
